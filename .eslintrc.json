@@ -1,0 +1,26 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-tabs": "warn",
+    "quotes": ["warn", "single"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "object-curly-spacing": ["warn", "always"],
+    "array-bracket-spacing": ["warn", "always"],
+    "no-unused-vars": [
+      "warn",
+      {
+        "ignoreRestSiblings": true
+      }
+    ]
+  }
+}
