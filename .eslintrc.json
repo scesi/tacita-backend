@@ -15,7 +15,6 @@
     "quotes": ["warn", "single"],
     "comma-dangle": ["warn", "always-multiline"],
     "object-curly-spacing": ["warn", "always"],
-    "array-bracket-spacing": ["warn", "always"],
     "no-unused-vars": [
       "warn",
       {
