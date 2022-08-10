@@ -29,7 +29,7 @@ router.get(
       message: 'Semester retrieved',
       data: resp,
     });
-  }
+  },
 );
 
 router.post(
@@ -43,7 +43,7 @@ router.post(
       message: 'Semester created',
       data: body,
     });
-  }
+  },
 );
 
 router.patch(
@@ -61,7 +61,7 @@ router.patch(
       message: 'Semester updated',
       data: { id, ...body },
     });
-  }
+  },
 );
 
 router.delete(
@@ -74,7 +74,7 @@ router.delete(
       message: 'Semester deleted',
       data: { id },
     });
-  }
+  },
 );
 
 module.exports = router;
