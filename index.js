@@ -1,4 +1,10 @@
 const express = require('express');
+
+const {
+  boomErrorHandler,
+  errorHandler,
+} = require('./src/common/middlewares/error.handler');
+
 const app = express();
 
 require('dotenv').config();
@@ -14,9 +20,13 @@ app.get('/', (req, res) => {
     message: 'Welcome to the API',
   });
 });
+app.use('/api/semester', require('./src/semester/semester.router'));
+app.use('/api/activities', require('./src/activities/activities.router'));
+
+app.use(boomErrorHandler);
+app.use(errorHandler);
 
 // API
-app.use('/api/v1/activities', require('./src/activities'));
 
 // start server
 app.listen(3000, (err) => {
