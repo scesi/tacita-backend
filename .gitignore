@@ -219,3 +219,6 @@ $RECYCLE.BIN/
 
 # docker db volumes
 data/
+
+# Package-lock.json
+package-lock.json

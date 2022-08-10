@@ -7,9 +7,12 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - db_data:/var/lib/mysql
       - ./init/create_second_db.sh:/docker-entrypoint-initdb.d/create_second_db.sh
     environment:
       - POSTGRES_USER=awokly_user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=dev_awokly_db
+
+volumes:
+  db_data:
