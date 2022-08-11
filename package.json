@@ -9,16 +9,23 @@
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js",
     "format": "prettier --write .",
-    "precommit": "npm run format && npm run lint"
+    "precommit": "npm run format && npm run lint",
+    "mig:run": "prisma migrate dev",
+    "mig:gen": "prisma migrate dev --name ",
+    "seed:run": "prisma db seed"
   },
   "keywords": [
     "node",
     "express"
   ],
+  "prisma": {
+    "seed": "node ./prisma/seeds/seed.js"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@hapi/boom": "10.0.0",
+    "@prisma/client": "^4.2.0",
     "cors": "2.8.5",
     "dotenv": "16.0.1",
     "express": "4.18.1",
@@ -30,6 +37,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.1",
     "nodemon": "^2.0.19",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "prisma": "^4.2.0"
   }
 }

@@ -7,26 +7,27 @@ const {
 
 const app = express();
 
-require('dotenv').config();
+require('dotenv').config({
+  path: '.env',
+});
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// error handler
 
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to the API',
   });
 });
+
+// API
 app.use('/api/semester', require('./src/semester/semester.router'));
 app.use('/api/activities', require('./src/activities/activities.router'));
 
+// error handler
 app.use(boomErrorHandler);
 app.use(errorHandler);
-
-// API
 
 // start server
 app.listen(3000, (err) => {

@@ -12,6 +12,19 @@
 npm install
 ```
 
+## Migrations
+
+```sh
+npm run mig:run
+npm run seed:run
+```
+
+## Run
+
+```sh
+npm run dev
+```
+
 ## Run tests
 
 ```sh

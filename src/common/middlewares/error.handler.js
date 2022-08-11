@@ -1,9 +1,10 @@
 function errorHandler(err, req, res, next) {
-  console.log('errorHandler');
-  res.status(500).json({
+  res.status(err.status || 500).json({
     message: err.message,
-    stack: err.stack,
+    payload: req.body || req.query || req.params,
+    stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
   });
+  next();
 }
 
 function boomErrorHandler(err, req, res, next) {
