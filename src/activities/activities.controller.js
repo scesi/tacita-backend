@@ -1,9 +1,15 @@
 const { ActivitiesService } = require('./activities.service');
 
 /**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @typedef {import('express').Request}  Request
+ * @typedef {import('express').Response} Response
+ * @typedef {import('express').NextFunction} NextFunction
+ */
+
+/**
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
  */
 const createActivity = async (req, res, next) => {
   const { body } = req;
@@ -21,9 +27,9 @@ const createActivity = async (req, res, next) => {
 };
 
 /**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
  */
 const getActivities = async (req, res, next) => {
   const { query } = req;
@@ -41,9 +47,9 @@ const getActivities = async (req, res, next) => {
 };
 
 /**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
  */
 const getActivity = async (req, res, next) => {
   const id = req.params.id;
@@ -61,9 +67,9 @@ const getActivity = async (req, res, next) => {
 };
 
 /**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
  */
 const updateActivity = async (req, res, next) => {
   const id = req.params.id;
@@ -82,9 +88,9 @@ const updateActivity = async (req, res, next) => {
 };
 
 /**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req
+ * @param {Response} res
+ * @param {NextFunction} next
  */
 const deleteActivity = async (req, res, next) => {
   const id = req.params.id;
