@@ -1,12 +1,12 @@
 const { Router } = require('express');
 const validationHandler = require('../common/middlewares/validator.handler');
-const{
+const {
   createSubject,
   getSubjects,
   getSubject,
   updateSubject,
   deleteSubject,
-} = require('./subject.controller')
+} = require('./subject.controller');
 const {
   createSubjectSchema,
   getSubjectSchema,
