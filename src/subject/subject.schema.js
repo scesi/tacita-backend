@@ -7,7 +7,7 @@ const level = Joi.integer().required;
 const icon = Joi.string().required;
 
 const getSubjectSchema = Joi.object({
-  id : id.required(),
+  id: id.required(),
 });
 
 const createSubjectSchema = Joi.object({
@@ -17,13 +17,13 @@ const createSubjectSchema = Joi.object({
 });
 
 const updateSubjectSchema = Joi.object({
-    title,
-    level,
-    icon,
+  title,
+  level,
+  icon,
 });
 
 module.exports = {
-    getSubjectSchema,
-    createSubjectSchema,
-    updateSubjectSchema,
+  getSubjectSchema,
+  createSubjectSchema,
+  updateSubjectSchema,
 };

@@ -1,4 +1,4 @@
-const {Router} = require('express');
+const { Router } = require('express');
 const validationHandler = require('../common/middlewares/validator.handler');
 const {
   createSubjectSchema,
@@ -8,28 +8,28 @@ const {
 
 const router = Router();
 
-router.get('/', (req,res) =>{
+router.get('/', (req, res) => {
   res.json({
     ok: true,
-    message: "Subject retrieved",
-    data:[],
-  })
+    message: 'Subject retrieved',
+    data: [],
+  });
 });
 
 router.get(
   '/:id',
   [validationHandler(getSubjectSchema, 'params')],
   (req, res) => {
-      const { id } = req.params;
-  
-      const resp = { id };
-  
-      res.json({
+    const { id } = req.params;
+
+    const resp = { id };
+
+    res.json({
       ok: true,
       message: 'Subject retrieved',
       data: resp,
-  });
-},
+    });
+  },
 );
 
 router.post(
@@ -55,7 +55,7 @@ router.patch(
   (req, res) => {
     const { id } = req.params;
     const body = req.body;
-  
+
     res.json({
       ok: true,
       message: 'Subject updated',
@@ -63,7 +63,6 @@ router.patch(
     });
   },
 );
-
 
 router.delete(
   '/:id',
@@ -77,5 +76,5 @@ router.delete(
     });
   },
 );
-  
+
 module.exports = router;
