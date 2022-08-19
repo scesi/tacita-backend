@@ -40,4 +40,6 @@ model Semester {
   gestion    String   @db.VarChar(50)
   end_date   DateTime @db.Date
   start_date DateTime @db.Date
+
+  @@map("semesters")
 }
