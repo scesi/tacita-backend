@@ -37,7 +37,7 @@ model Activity {
 
 model Subject{
   id Int @id @default(autoincrement())
-  title String @db.VarChar(255)
+  title String @db.VarChar(50)
   level Int @db.Integer
   icon String @db.VarChar(255)
 

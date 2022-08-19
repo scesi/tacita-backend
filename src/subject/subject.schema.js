@@ -22,8 +22,13 @@ const updateSubjectSchema = Joi.object({
   icon,
 });
 
+const querySchema = Joi.object().keys({
+   levels: Joi.integer().optional(),
+})
+
 module.exports = {
   getSubjectSchema,
   createSubjectSchema,
   updateSubjectSchema,
+  querySchema,
 };
