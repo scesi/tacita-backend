@@ -22,8 +22,13 @@ const updateSemesterSchema = Joi.object({
   end_date,
 });
 
+const querySchema = Joi.object().keys({
+  date: Joi.date().optional(),
+});
+
 module.exports = {
   getSemesterSchema,
   createSemesterSchema,
   updateSemesterSchema,
+  querySchema,
 };
