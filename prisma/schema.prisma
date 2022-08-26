@@ -35,25 +35,25 @@ model Activity {
   @@map("activities")
 }
 
-
-model Subject{
-  id Int @id @default(autoincrement())
+model Subject {
+  id    Int    @id @default(autoincrement())
   title String @db.VarChar(50)
-  level Int @db.Integer
-  icon String @db.VarChar(255)
+  level Int    @db.Integer
+  icon  String @db.VarChar(255)
 
   @@map("subject")
 }
 
 model User {
-  id              Int      @id @default(autoincrement())
-  first_name      String   @db.VarChar(255)
-  last_name       String   @db.VarChar(255)
-  username        String   @db.VarChar(255)
-  hased_password  String   @db.VarChar(255)
-  email           String   @db.VarChar(255)
+  id             Int    @id @default(autoincrement())
+  first_name     String @db.VarChar(255)
+  last_name      String @db.VarChar(255)
+  username       String @db.VarChar(255)
+  hased_password String @db.VarChar(255)
+  email          String @db.VarChar(255)
 
   @@map("users")
+}
 
 model Semester {
   id         Int      @id @default(autoincrement())
@@ -62,5 +62,4 @@ model Semester {
   start_date DateTime @db.Date
 
   @@map("semesters")
-
 }
