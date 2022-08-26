@@ -35,6 +35,16 @@ model Activity {
   @@map("activities")
 }
 
+
+model Subject{
+  id Int @id @default(autoincrement())
+  title String @db.VarChar(50)
+  level Int @db.Integer
+  icon String @db.VarChar(255)
+
+  @@map("subject")
+}
+
 model User {
   id              Int      @id @default(autoincrement())
   first_name      String   @db.VarChar(255)
