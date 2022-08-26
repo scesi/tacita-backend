@@ -44,4 +44,13 @@ model User {
   email           String   @db.VarChar(255)
 
   @@map("users")
+
+model Semester {
+  id         Int      @id @default(autoincrement())
+  gestion    String   @db.VarChar(50)
+  end_date   DateTime @db.Date
+  start_date DateTime @db.Date
+
+  @@map("semesters")
+
 }
