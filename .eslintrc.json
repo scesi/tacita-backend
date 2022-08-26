@@ -2,13 +2,14 @@
   "env": {
     "commonjs": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "jest"],
   "rules": {
     "no-tabs": "warn",
     "quotes": ["warn", "single"],
@@ -20,6 +21,11 @@
         "ignoreRestSiblings": true
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 // API
 app.use('/api/semester', require('./src/semester/semester.router'));
 app.use('/api/activities', require('./src/activities/activities.router'));
+app.use('/api/users', require('./src/users/users.router'));
 
 // error handler
 app.use(boomErrorHandler);
