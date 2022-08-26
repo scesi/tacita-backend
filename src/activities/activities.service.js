@@ -66,11 +66,13 @@ const ActivitiesService = {
   /**
    *
    * @param {number} id
-   * @param {Activity} newActivity
+   * @param {Partial<Activity>} newActivity
    * @returns
    */
   async updateActivity(id, newActivity) {
-    const status = await StatusService.getStatus(newActivity.status_id);
+    const status = newActivity.status_id
+      ? await StatusService.getStatus(newActivity.status_id)
+      : { id: newActivity.status_id };
     let activity = await this.getActivity(id);
     newActivity.status_id = status.id;
     activity = await prisma.activity.update({
