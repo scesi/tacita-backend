@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 
 const {
   boomErrorHandler,
@@ -12,6 +13,7 @@ require('dotenv').config({
 });
 
 // middlewares
+app.use(helmet.hidePoweredBy());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
