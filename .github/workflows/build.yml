@@ -27,4 +27,4 @@ jobs:
         working-directory: ./coverage
         run: |
           sed -i 's/\/home\/runner\/work\/tacita-backend\/tacita-backend\//\/github\/workspace\//g' lcov.info
-          sed -i 's/\/home\/runner\/work\/tacita-backend\/tacita-backend\//\/github\/workspace\//g' sonar-cloud-reporter.xml
+          sed -i 's/\/home\/runner\/work\/tacita-backend\/tacita-backend\//\/github\/workspace\//g' test-report.xml
