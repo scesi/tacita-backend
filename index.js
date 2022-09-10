@@ -1,5 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
+const cron = require('node-cron');
 
 const {
   boomErrorHandler,
@@ -31,6 +32,11 @@ app.use('/api/users', require('./src/users/users.router'));
 // error handler
 app.use(boomErrorHandler);
 app.use(errorHandler);
+
+// Scheduled Jobs every monday at 00:00
+cron.schedule('0 0 * * 1', () => {
+  // TODO: delete user schedule in DB
+});
 
 // start server
 app.listen(3000, (err) => {
