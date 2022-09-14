@@ -9,6 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
+    "testResultsProcessor": "jest-sonar-reporter",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js",
     "format": "prettier --write .",
@@ -54,12 +55,14 @@
     ],
     "rootDir": "src",
     "testRegex": ".*\\.test\\.js$",
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.service.js"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
+      "/node_modules/",
       ".router.ts",
       ".controller.ts",
       ".schema.ts"

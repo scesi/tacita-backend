@@ -222,3 +222,6 @@ data/
 
 # Package-lock.json
 package-lock.json
+
+# Test reports
+test-report.xml
